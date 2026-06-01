@@ -3,16 +3,33 @@ import './style.css'
 import { Cite } from '@citation-js/core';
 import '@citation-js/plugin-cff';
 import '@citation-js/plugin-bibtex';
+import '@citation-js/plugin-csl';
 
+const OUTPUT_OPTIONS = {
+    bibtex: {
+        name: 'bibtex',
+        options: {},
+    },
+    apa: {
+        name: 'bibliography',
+        options: {
+            template: 'apa'
+        },
+    },
+}
 
 function convert(data, format) {
-    const cite = new Cite(data, { output: { style: 'bibtex', type: 'string' }});
-    return cite.get();
+    const cite = new Cite(data);
+    const formatOptions = OUTPUT_OPTIONS[format];
+    return cite.format(
+        formatOptions.name,
+        { ...formatOptions, format: 'html' },
+    );
 }
 
 function showOutput(output) {
     const el = document.querySelector('#output');
-    el.innerHTML = `<pre>${output}</pre>`
+    el.innerHTML = `${output}`
 }
 
 function update(data, format) {
