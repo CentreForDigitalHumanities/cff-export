@@ -4,10 +4,29 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cff-export</title>
+    <title>CFF export</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main>
+        <h1>CFF export</h1>
+        <p>This is a tool to export CITATION.cff files to  other formats.</p>
+
+        <form id="form-cff">
+            <label for="input-cff-data">CFF data</label>
+            <textarea id="input-cff-data"></textarea>
+
+            <label for="input-format">Export to</label>
+            <select id="input-format">
+                <option>BibTeX</option>
+            </select>
+            <button type="submit">Convert</button>
+        </form>
+
+        <div id="output"></div>
+    </main>
+    <footer>
+        <img src="/cdh.jpg" width="500">
+    </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
