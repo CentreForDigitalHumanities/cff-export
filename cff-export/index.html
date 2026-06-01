@@ -3,25 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CFF export</title>
   </head>
   <body>
-    <main>
+    <main class="container py-5">
         <h1>CFF export</h1>
-        <p>This is a tool to export CITATION.cff files to  other formats.</p>
+        <p>Export CITATION.cff files to  other formats.</p>
 
-        <label for="input-cff-data">CFF data</label>
-        <textarea id="input-cff-data" name="data"></textarea>
+        <div class="row">
+            <div class="col-md">
+                <label for="input-cff-data" class="form-label">CFF data</label>
+                <textarea id="input-cff-data" name="data" class="form-control"
+                    rows="16"></textarea>
+            </div>
+            <div class="col-md">        
+                <label for="input-format" class="form-label">Convert to</label>
+                <select id="input-format" name="format" class="form-select">
+                    <option value="bibtex">BibTeX</option>
+                </select>
 
-        <label for="input-format">Export to</label>
-        <select id="input-format" name="format">
-            <option value="bibtex">BibTeX</option>
-        </select>
-
-        <div id="output"></div>
+                <p class="mt-4">Output</p>
+                <div id="output" class="border p-3"></div>
+            </div>
+        </div>
     </main>
-    <footer>
+    <footer class="container py-5">
         <img src="/cdh.jpg" width="500">
     </footer>
     <script type="module" src="/src/main.js"></script>
