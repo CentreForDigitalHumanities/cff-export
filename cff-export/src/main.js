@@ -27,17 +27,31 @@ function convert(data, format) {
     );
 }
 
+function resetOutput() {
+    document.querySelector('#output').innerHTML = '';
+    document.querySelector('#error').hidden = true;
+}
+
 function showOutput(output) {
     const el = document.querySelector('#output');
-    el.innerHTML = `${output}`
+    el.innerHTML = output;
+}
+
+function showError(err) {
+    document.querySelector('#error').hidden = false;
 }
 
 function update(data, format) {
+    resetOutput();
     if (data && format) {
-        const output = convert(data, format);
+        let output;
+        try {
+            output = convert(data, format);
+        } catch (err) {
+            showError(err);
+            return;
+        }        
         showOutput(output);
-    } else {
-        showOutput('');
     }
 }
 
