@@ -11,22 +11,19 @@
         <h1>CFF export</h1>
         <p>This is a tool to export CITATION.cff files to  other formats.</p>
 
-        <form id="form-cff">
-            <label for="input-cff-data">CFF data</label>
-            <textarea id="input-cff-data"></textarea>
+        <label for="input-cff-data">CFF data</label>
+        <textarea id="input-cff-data" name="data"></textarea>
 
-            <label for="input-format">Export to</label>
-            <select id="input-format">
-                <option>BibTeX</option>
-            </select>
-            <button type="submit">Convert</button>
-        </form>
+        <label for="input-format">Export to</label>
+        <select id="input-format" name="format">
+            <option value="bibtex">BibTeX</option>
+        </select>
 
         <div id="output"></div>
     </main>
     <footer>
         <img src="/cdh.jpg" width="500">
     </footer>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
