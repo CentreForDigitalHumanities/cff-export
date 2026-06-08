@@ -6,15 +6,22 @@ import '@citation-js/plugin-bibtex';
 import '@citation-js/plugin-csl';
 
 const OUTPUT_OPTIONS = {
-    bibtex: {
-        name: 'bibtex',
-        options: {},
-    },
     apa: {
         name: 'bibliography',
         options: {
             template: 'apa'
         },
+    },
+    biblatex: {
+        name: 'biblatex',
+        options: {}
+    },
+    bibtex: {
+        name: 'bibtex',
+        options: {},
+    },
+    csljson: {
+        name: 'data'
     },
 }
 
@@ -38,6 +45,7 @@ function showOutput(output) {
 }
 
 function showError(err) {
+    console.error(err);
     document.querySelector('#error').hidden = false;
 }
 
