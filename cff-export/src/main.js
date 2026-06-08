@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import './style.css'
 import { Cite } from '@citation-js/core';
 import '@citation-js/plugin-cff';

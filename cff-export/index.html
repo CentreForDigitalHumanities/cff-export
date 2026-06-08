@@ -7,39 +7,39 @@
     <title>CFF export</title>
   </head>
   <body>
-    <main class="container py-5">
+    <main class="container">
         <h1>CFF export</h1>
         <p>Export CITATION.cff files to  other formats.</p>
 
         <div class="row">
-            <div class="col-md-6">
-                <label for="input-cff-data" class="form-label">CFF data</label>
-                <textarea id="input-cff-data" name="data" class="form-control"
+            <div class="col">
+                <label for="input-cff-data">CFF data</label>
+                <textarea id="input-cff-data" name="data"
                     rows="16"></textarea>
             </div>
-            <div class="col-md-6">        
-                <label for="input-format" class="form-label">Convert to</label>
-                <select id="input-format" name="format" class="form-select">
+            <div class="col">        
+                <label for="input-format">Convert to</label>
+                <select id="input-format" name="format">
                     <option value="apa">APA</option>
                     <option value="bibtex">BibTeX</option>
                     <option value="bibtex">BibLaTeX</option>
                     <option value="csljson">CSL-JSON</option>
                 </select>
 
-                <p class="mt-4">Output</p>
+                <p class="label">Output</p>
                 <div role="alert">
-                    <div class="alert alert-danger" hidden id="error">
-                        <p class="mb-0" id="error-message">
+                    <div class="error-message" hidden id="error">
+                        <p id="error-message">
                             Something went wrong!
                         </p>
                     </div>
                 </div>
-                <div id="output" class="border p-3"></div>
+                <div id="output" class="border"></div>
             </div>
         </div>
     </main>
-    <footer class="container py-5">
-        <p><strong>About this application</strong></p>
+    <footer class="container">
+        <p><strong>About this page</strong></p>
         <p>
             This application is developed by the Centre for Digital Humanities
             at Utrecht University, to facilitate usage of the

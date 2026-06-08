@@ -1,0 +1,54 @@
+:root {
+    font-family: system-ui, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+}
+
+.row {
+    display: flex;
+    margin: 2rem -1rem;
+
+    .col {
+        margin: 0 1rem;
+        width: 50%;
+    }
+}
+
+label {
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+label, .label {
+    font-weight: bold;
+}
+
+select, textarea {
+    display: block;
+    width: 100%;
+}
+
+.error-message {
+    border: 1px solid red;
+    background-color: #ffeeee;
+    padding:  0 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.border {
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+}
+
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column;
+
+        .col {
+            width: 100% !important;
+        }
+    }
+}
